@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Schedule</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="train.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="jumbotron">
+                <h1 class="display-4">Train Schedule</h1>
+                <hr class="my-4">
+                <p class="lead">View the below times for the train schedule for today.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule container -->
+
+    <div class="container">
+        <div class="row center">
+            <div class="col-lg-12">
+                <div class="card">
+                    <h5 class="card-header">Train Schedule</h5>
+
+                    <!-- scheduling table -->
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+
+                        <div class="col-sm-2" id="train-name">
+                            <h5 class="card-title" id="name-display"><strong>Train Name</strong></h5>
+                        </div>
+
+                        <div class="col-sm-2" id="destination">
+                            <h5 class="card-title" id="dest-display"><strong>Destination</strong></h5>
+                        </div>
+
+                        <div class="col-sm-2" id="frequency">
+                            <h5 class="card-title" id="freq-display"><strong>Frequency (min)</strong></h5>
+                        </div>
+
+                        <div class="col-sm-2" id="next-arrival">
+                            <h5 class="card-title" id="arr-display"><strong>Next Arrival</strong></h5>
+                        </div>
+
+                        <div class="col-sm-2" id="minutes-away">
+                            <h5 class="card-title" id="min-display"><strong>Minutes Away</strong></h5>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <!-- Train input form -->
+<div class="wrapper">
+    <div class="container">
+        <div class="row center">
+            <div class="col-md-2"></div>
+            <div class="col-lg-8">
+
+                    <!-- input holder for scheduling information -->
+                    <form>
+                        <div class="form-group">
+                            <label>Train Name</label>
+                            <input type="text" class="form-control" id="input-train-name">
+                        </div>
+                        <div class="form-group">
+                            <label>Destination</label>
+                            <input type="text" class="form-control" for="com" id="input-destination">
+                        </div>
+                        <div class="form-group">
+                            <label>First Train Time (00:00:00)</label>
+                            <input type="time" class="form-control" id="input-time">
+                        </div>
+                        <div class="form-group">
+                            <label>Frequency in Minutes</label>
+                            <input type="number" class="form-control" id="input-frequency">
+                        </div>
+
+                        <button class="btn btn-primary" id="add-train">Submit</button>
+                   
+                    </form>
+            <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+
+<script type="text/javascript">
+
+
+
+$("#add-train").on("click", function(event) {
+    event.preventDefault();
+
+    let name = $("#input-train-name").val().trim();
+    let destination = $("#input-destination").val().trim();
+    let firstTime = $("#input-time").val().trim();
+    let frequency = $("#input-frequency").val().trim();
+
+    // testing for inputs
+    console.log(name);
+    console.log(destination);
+    console.log(firstTime);
+    console.log(frequency);
+
+    // display inputs passed to the table
+    $("#name-display").append("<p>" + name + "</p>");
+    $("#dest-display").append("<p>" + destination + "</p>");
+    $("#freq-display").append("<p>" + frequency + "</p>");
+    $("#arr-display").append("<p>" + "" + "</p>");
+    $("#min-display").append("<p>" + "" + "</p>");
+    
+    // moment()
+    src="/momentjs/lib/moment/moment.min.js"
+
+    let m = moment();
+    console.log(m);
+
+
+
+
+
+
+
+    
+});
+
+</script>
+
+</body>
+
+</html>

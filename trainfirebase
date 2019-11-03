@@ -1,0 +1,24 @@
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+var firebaseConfig = {
+    apiKey: "AIzaSyB57LkT7slFzNRHmPrXnAPIOGqIUYcCC-Y",
+    authDomain: "train-tracker-77fde.firebaseapp.com",
+    databaseURL: "https://train-tracker-77fde.firebaseio.com",
+    projectId: "train-tracker-77fde",
+    storageBucket: "train-tracker-77fde.appspot.com",
+    messagingSenderId: "788821981456",
+    appId: "1:788821981456:web:17f3ecefa1671c35decd95"
+  };
+
+firebase.initializeApp(firebaseConfig);
+
+let database = firebase.database();
+
+    database.ref().push({
+        name: name,
+        destination: destination,
+        firstTime: firstTime,
+        frequency: frequency
+    });
